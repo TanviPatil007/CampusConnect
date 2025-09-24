@@ -13,7 +13,7 @@ const NotePage = () => {
 
   useEffect(() => {
     axios
-      .get("https://campusconnect-1-fv53.onrender.com//api/notes")
+      .get("https://campusconnect-1-fv53.onrender.com/api/notes")
       .then((res) => {
         if (res.data.success) {
           const grouped = {};
