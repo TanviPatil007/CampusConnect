@@ -1,55 +1,4 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import "./notes.css";
 
-// const Notes = () => {
-//   const [groupedNotes, setGroupedNotes] = useState({});
-
-//   useEffect(() => {
-//     axios.get("http://localhost:5000/api/notes")
-//       .then(res => {
-//         const grouped = {};
-//         res.data.forEach(note => {
-//           if (!grouped[note.department]) grouped[note.department] = {};
-//           if (!grouped[note.department][note.yearOfStudy]) grouped[note.department][note.yearOfStudy] = {};
-//           if (!grouped[note.department][note.yearOfStudy][note.subject]) grouped[note.department][note.yearOfStudy][note.subject] = [];
-//           grouped[note.department][note.yearOfStudy][note.subject].push(note);
-//         });
-//         setGroupedNotes(grouped);
-//       })
-//       .catch(err => console.error(err));
-//   }, []);
-
-//   return (
-//     <div className="notes-container">
-//       <h2 className="notes-title">All Notes</h2>
-//       {Object.keys(groupedNotes).map(dept => (
-//         <div key={dept} className="department">
-//           <div className="department-title">{dept}</div>
-//           {Object.keys(groupedNotes[dept]).map(year => (
-//             <div key={year}>
-//               <div className="year">{year}</div>
-//               {Object.keys(groupedNotes[dept][year]).map(subject => (
-//                 <div key={subject}>
-//                   <div className="subject">{subject}</div>
-//                   <ul className="notes-list">
-//                     {groupedNotes[dept][year][subject].map((note, index) => (
-//                       <li key={index}>
-//                         <a href={`http://localhost:5000${note.fileUrl}`} target="_blank" rel="noreferrer">
-//                           {note.originalName}
-//                         </a> (Uploaded by {note.uploader})
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//               ))}
-//             </div>
-//           ))}
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
 
 // export default Notes;
 import React, { useState, useEffect } from "react";
@@ -66,7 +15,7 @@ export default function notes() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/notes")
+      .get("https://campusconnect-1-fv53.onrender.com/api/notes")
       .then((res) => {
         const grouped = {};
         res.data.forEach((note) => {
