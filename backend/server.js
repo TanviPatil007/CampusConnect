@@ -11,7 +11,7 @@ const path = require("path");
 const app = express();
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: "https://campusconnect-2-97xk.onrender.com/",
   methods: ["GET", "POST", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
