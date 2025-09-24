@@ -27,7 +27,7 @@ const ProfileDetail = () => {
     formData.append("profilePicture", profilePic);
     try {
       const res = await axios.post(
-        `http://localhost:9000/api/profile-picture/${user._id}`,
+        `https://campusconnect-1-fv53.onrender.com/api/profile-picture/${user._id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
